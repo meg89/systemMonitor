@@ -1,7 +1,9 @@
+#pragma once
 #include <string>
 #include <iostream>
 #include <vector>
 #include "ProcessParser.h"
+
 class SysInfo {
 private:
     std::vector<std::string> lastCpuStats;
@@ -25,7 +27,7 @@ public:
     Initial data for individual cores is set
     System data is set
     */
-        this->getOtherCores(getNumberOfCores());
+        this->getOtherCores(ProcessParser::getNumberOfCores());
         this->setLastCpuMeasures();
         this->setAttributes();
         this-> OSname = ProcessParser::getOSName();
